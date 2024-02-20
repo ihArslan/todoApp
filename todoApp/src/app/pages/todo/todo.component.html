@@ -1,0 +1,97 @@
+<app-header></app-header>
+<div class="d-flex mt-100 container">
+  <button class="btn btn-outline-success me-2" (click)="filterByStatu('')">
+    HEPSİ
+  </button>
+  <button
+    class="btn btn-outline-danger me-2"
+    (click)="filterByStatu('important')"
+  >
+    ÖNEMLİ
+  </button>
+  <button
+    class="btn btn-outline-primary me-2"
+    (click)="filterByStatu('normal')"
+  >
+    NORMAL
+  </button>
+  <button class="btn btn-outline-secondary me-2" (click)="filterByStatu('done')">
+    YAPILDI
+  </button>
+</div>
+<div class="mt-4">
+  <div class="container d-flex justify-content-between">
+    <h3 class="ps-0 fw-bold">Görev Listesi</h3>
+    <button class="btn btn-primary" (click)="addSlidePanel()">
+      Görev Ekle
+    </button>
+  </div>
+</div>
+
+@for (item of todos; track $index) {
+<app-todo-cart
+  [type]="item.statu"
+  [todo]="item"
+  (updateTodo)="updateTodoMain($event)"
+></app-todo-cart>
+}
+<div class="fullheigth">
+  <app-slide-panel
+    [isOpen]="isSlidePanelOpen"
+    [headerText]="text"
+    (onClose)="onCloseSladePanel()"
+  >
+    <form [formGroup]="todoForm" (ngSubmit)="onSubmit(todoForm.value)">
+      <div class="form-group">
+        <label class="mb-2">Görev detaylarını yazınız</label>
+        <textarea
+          cols="30"
+          rows="3"
+          class="form-control mb-2"
+          formControlName="description"
+        ></textarea>
+        @if (todoForm.get('description')?.hasError('required')&&
+        todoForm.get('description')?.touched) {
+        <span class="text-danger mb-1">Lütfen Görev yazınız!</span>
+        }
+      </div>
+      <div class="form-group">
+        <label for="date">Tarih Seçiniz:</label>
+        <input
+          type="date"
+          name="date"
+          id="date"
+          class="form-control"
+          formControlName="date"
+        />
+      </div>
+      <div class="form-group">
+        <label for="time">Saat Seçiniz:</label>
+        <input
+          type="time"
+          name="time"
+          id="time"
+          class="form-control"
+          formControlName="time"
+        />
+      </div>
+      <select formControlName="statu" class="form-control mb-3 mt-2">
+        <option value="done">YAPILDI</option>
+        <option value="normal" selected>NORMAL</option>
+        <option value="important">ÖNEMLİ</option>
+      </select>
+      <div class="d-flex justify-content-around">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [textContent]="isUpdate ? isaddTodoBtn : isupdateBtn"
+        >
+          ONAYLA
+        </button>
+        <button class="btn btn-secondary" (click)="onCloseSladePanel()">
+          İPTAL
+        </button>
+      </div>
+    </form>
+  </app-slide-panel>
+</div>

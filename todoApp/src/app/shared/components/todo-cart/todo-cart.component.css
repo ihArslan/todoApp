@@ -1,0 +1,52 @@
+
+p{
+    padding: 0;
+    margin: 0;
+}
+.todoBox{
+    padding: 2px 0 2px 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.status{
+    width: 25px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+}
+.todoBox.doneStatus{
+    border-left: 6px solid grey;
+    box-shadow: 2px 2px 8px #cccccc;
+    .status{
+        background-color: grey;
+    }
+    .todo{
+        text-decoration: line-through;
+    }
+}
+.todoBox.normalStatus{
+    border-left: 6px solid #0d6efd;
+    box-shadow: 2px 2px 8px #96bdf8;
+    .status{
+        background-color: #0d6efd;
+    }
+}
+.todoBox.importantStatus{
+    border-left: 6px solid #dc3545;
+    box-shadow: 2px 2px 8px #d88089;
+    .status{
+        background-color: #dc3545;
+    }   
+}
+.upDate{
+    cursor: pointer;
+}
+.dateBox{
+    font-size: small;
+    text-wrap: nowrap;
+}
+.c-pointer{
+    cursor: pointer;
+}

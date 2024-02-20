@@ -1,0 +1,27 @@
+<div
+  class="container todoBox"
+  [class]="{
+    doneStatus: type === 'done',
+    normalStatus: type === 'normal',
+    importantStatus: type === 'important'
+  }"
+>
+  <div class="d-flex justify-content-between pt-4 pb-4 align-items-center">
+    <p class="todo">{{ todo.description }}</p>
+    <div class="d-flex align-items-center">
+      <span class="me-4 text-muted dateBox"
+        >{{ todo.date }}/{{ todo.time }}</span
+      >
+      <div class="ms-4 me-4 upDate" (click)="_updateTodo(todo)">
+        <img
+          src="../../../../assets/images/pencil.png"
+          width="20px"
+          alt="pencil"
+        />
+      </div>
+      <div class="ms-4 me-2 c-pointer" (click)="removeTodo(todo)">
+        <img src="../../../../assets/images/bin.png" width="20px" alt="bin" />
+      </div>
+    </div>
+  </div>
+</div>

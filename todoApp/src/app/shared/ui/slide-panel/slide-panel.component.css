@@ -1,0 +1,47 @@
+.bgBlack{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.507);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+   
+    div{
+        margin: 0;
+        padding: 0;
+        ng-content{
+            margin:0;
+        }
+    }
+    
+}
+::-webkit-scrollbar{
+   
+    position:fixed;
+    top: 0;
+}
+
+.slidePanel{
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: rightToleft 0.8s ease-out ;
+    margin: 0;
+    padding: 0;
+}
+.closeBtn{
+    cursor: pointer;
+}
+@keyframes rightToleft {
+    from {transform: translateX(200px);}
+    to {transform: translateX(0);}
+  }
+  

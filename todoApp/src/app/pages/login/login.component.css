@@ -1,0 +1,12 @@
+.loginFormGroup{
+    padding: 50px;
+    .form-group{
+        margin-bottom: 10px;
+        label{
+            margin-bottom: 2px;
+        }
+        input{
+            margin-top: 5px;
+        }
+    }
+}

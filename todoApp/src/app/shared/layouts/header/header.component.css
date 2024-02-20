@@ -1,0 +1,10 @@
+.header{
+    padding: 15px 0;
+    div{
+        cursor: pointer;
+    }
+    .logo{
+        font-weight: bold;
+        font-family: roboto,'san-serif';
+    }
+}

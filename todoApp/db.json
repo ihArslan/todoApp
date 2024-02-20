@@ -1,0 +1,9 @@
+
+{
+  "todos": [
+      { "id":"1", "description": "Rxjs kütüphanesinin derslerinin tekrarı yapılacak.", "date": "05-02-2024", "time": "10:00", "statu": "done" },
+      {"id":"2", "description": "Robatik kodlama eğiitmlerine giriş derslerine başlanacak.", "date": "07-02-2024", "time": "12:00", "statu": "normal" },
+      { "id":"3","description": "SpaceX canlı yayını takip edilecek.", "date": "09-02-2024", "time": "23:00", "statu": "important" },
+      { "id":"4","description": "Araç oto yıkamaya bırakılacak.", "date": "10-02-2024", "time": "10:00", "statu": "normal" }
+  ]   
+}
