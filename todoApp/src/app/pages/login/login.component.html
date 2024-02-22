@@ -12,11 +12,6 @@
         class="form-control"
         placeholder="Kullanıcı Adı"
         formControlName="username"
-        [class]="
-          { invalid: loginForm.get('username')?.hasError('required') } && {
-            valid: loginForm.get('username')?.valid
-          }
-        "
         autocomplete="off"
         required
       />
@@ -34,12 +29,6 @@
           class="form-control"
           placeholder="Parolanız"
           formControlName="password"
-          [class]="{
-            invalid:
-              loginForm.get('password')?.hasError('required') &&
-              loginForm.get('email')?.touched,
-            valid: loginForm.get('password')?.valid
-          }"
           autocomplete="off"
           required
         />
